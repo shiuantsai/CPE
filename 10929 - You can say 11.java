@@ -1,3 +1,6 @@
+/*
+BigInteger大數字是字串的概念!!!
+*/
 import java.math.BigInteger;
 import java.util.*;
 class main{

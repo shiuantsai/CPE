@@ -13,6 +13,8 @@ import java.util.*;
 		while(scn.hasNext()){
 			int input1=scn.nextInt();
 			int input2=scn.nextInt();
+			int aa=input1;
+			int bb=input2;
 			
 			int temp;
 			//使input1較小
@@ -42,7 +44,7 @@ import java.util.*;
 					max=count;
 				
 			}
-			System.out.println(input1+" "+input2+" "+max);
+			System.out.println(aa+" "+bb+" "+max);
 		
 		
 		}
