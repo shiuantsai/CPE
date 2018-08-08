@@ -1,9 +1,14 @@
 /*
-題意:陣列中數字兩兩相減，若出現1~n-1(n為個數)且不重複則為Jolly
+題意:陣列中數字兩兩相減，若出現了1~n-1(n為個數)則為jolly。
 解法:
 1.將每個數字存入陣列
 2.兩兩相減，取絕對值Math.abs(array)，放入array2
-3.利用boolean判斷array2是否有重複的，若有則break
+3.判斷array2是否有出現1~n-1每個數字。
+判斷方法:
+將array2做排序，再用迴圈1~n-1判斷，
+利用因為4個數相減完恰巧是3個數
+所以陣列必定剛好是1~3 若條件不成立即not jolly
+
 */
 import java.util.*;
 class main{
@@ -11,43 +16,39 @@ class main{
 		Scanner scn = new Scanner(System.in);
 		while(scn.hasNext()){
 			int n = scn.nextInt();
-			//故意設有n格
 			int array[] = new int[n];
-			
+		
 			//將每個數字存入陣列
 			for(int i=0; i<n ;i++){
 				 array[i]=scn.nextInt();
 			}
 			
-			//array2用來存放絕對值，兩兩相減，所以會少一格
-			int array2[]=new int[n-1];
-			for(int i=0; i<array.length;i++){
-				if(i==array.length-1)break; //防止超出陣列
+		
+			boolean flag=true;
+			if(n!=1){
+			
+				//array2用來存放絕對值，兩兩相減，所以會少一格
+				int array2[]=new int[n-1];
+				for(int i=0; i<array.length;i++){
+					if(i==array.length-1)break; /**防止超出陣列**/
 				array2[i]=Math.abs(array[i]-array[i+1]);
 			}
 			
+			Arrays.sort(array2);
 			
-			//接著判斷array2中是否有重複的，布林true表示Jolly(無重複)
-			boolean bool = true;
 			for(int i=0; i<array2.length; i++){
-				if (bool==false) break;
-				
-				for(int j=1;j<array2.length;j++){
-					if(array2[i]==array2[j]){
-						if (i==j) continue;	//i,j相同時就一定會數字相同
-						bool = false;
-						break;
-					}		
+				if(array2[i]!=i+1){
+					flag = false;
+					break;
+					}
 				}
-					
 			}
+			
+			
 		
+		if(flag) System.out.println("Jolly");
 		
-			if(bool == false)
-				System.out.println("Not jolly");
-			else
-				System.out.println("Jolly");
-				
+		else System.out.println("Not jolly");
 		}
 	}
 }
