@@ -9,8 +9,8 @@ class main{
 		BigInteger eleven = new BigInteger("11");
 		while(scn.hasNext()){
 			
-			String input = scn.next();
-			BigInteger a = new BigInteger(input);
+			String input = scn.next(); //容易忘記，大數字用的是字串
+			BigInteger a = new BigInteger(input); //容易忘記
 			BigInteger b = a.mod(eleven);
 			if (input.equals("0"))
 				 break;
