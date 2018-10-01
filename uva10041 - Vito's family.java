@@ -1,51 +1,32 @@
 /*
 題意:
-只能按上下鍵，則我要從a按到b最少要按幾次鍵?
-卡住:
-要怎麼判斷該從小按到大還是大按到小可得到最少按的次數?
-0~99有100個頻道
-故假設以下幾筆
-29 80 相減=51 (從大到小可得最小次數)
-30 80 相減=50 (沒差)
-31 80 相減=49 (從小到大可得最小次數)
+有個人有很多親戚，他常常去拜訪他們。
+而他想找一間離所有親戚家最近的房子
+，使得他拜訪所有親戚時，距離的總和是最小值。
 
-真正的題意:
-找中位數
-
+解法:找中位數
 */
-
 
 import java.util.*;
 class main{
 	public static void main(String args[]){
-	
 		Scanner scn = new Scanner(System.in);
-		int out = scn.nextInt();
+		int cases = scn.nextInt();
 		
-			for(int i=1;i<=out;i++)
-			{
-				int in = scn.nextInt();
-				int arr[]=new int[in];
-				
-				//將每個數塞入陣列
-				for(int j=0;j<in;j++)
-				{
-					arr[j] = scn.nextInt(); 
-					
-				}
-				Arrays.sort(arr);
-				//將每個數與中位數做相減取絕對值並全部加起來
-				int count=0;
-				int mid=arr[in/2];
-				 	
-				for(int k=0;k<in;k++)
-				{
-					count+=(Math.abs(arr[k]-mid));
-				}
-				System.out.println(count);		
+		for(int i=0;i<cases;i++){
+			int input = scn.nextInt();
+			int array[] = new int[input];
 			
+			for(int j=0;j<input;j++){
+				array[j]=scn.nextInt();
 			}
-			
-			
+
+			Arrays.sort(array);
+			int sum=0;
+			for(int k=0;k<input;k++){
+			sum+=Math.abs(array[input/2]-array[k]);
+			}
+			System.out.println(sum);
+		}
 	}
 }

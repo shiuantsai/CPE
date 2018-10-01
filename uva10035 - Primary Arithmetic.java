@@ -6,45 +6,47 @@ a,b(各%10)得到個位數在做相加，若相加>=10，則表示進位，且�
 否則 a/=10;b/=10;
 */
 
-
 import java.util.*;
 class main{
 	public static void main(String args[]){
 		Scanner scn = new Scanner(System.in);
+		
 		while(scn.hasNext()){
-			int a_temp,b_temp;
-			int carry=0;
-			int a= scn.nextInt();
-			int b= scn.nextInt();
+			int input1=scn.nextInt();
+			int input2=scn.nextInt();
+			if(input1==0 && input2==0 ) break;
 			
-			if(a==0&&b==0)
-				break;
-				
-			while(a!=0 && b!=0){
-			
-				a_temp = a%10;
-				b_temp = b%10;
-				
-				if((a_temp+b_temp)>=10){
-					carry++;
-					a/=10;
-					b/=10;
-					a++;  //進位
-				}
-				else{ 
-					a/=10;
-					b/=10;
-				}
-				
+			//假設input2比較大
+			int temp;
+			if(input1>input2){
+				temp=input1;
+				input1=input2;
+				input2=temp;
 			}
-			if(carry==0)
+			
+			int cnt=0;
+			while(input2>0)
+			{
+				if((input1%10 + input2%10)>9){
+					cnt++;
+					input1/=10;
+					input2/=10;
+					input1++;
+				}
+				else{
+				input1/=10;
+				input2/=10;
+				}
+			}
+			if(cnt==0)
 			System.out.println("No carry operation.");
 			
-			else if (carry ==1)
-			System.out.println(carry+" "+"carry operation.");
+			else if(cnt==1)
+			System.out.println("1 carry operation.");
 			
-			else 
-			System.out.println(carry+" "+"carry operations.");
+			else
+			System.out.println(cnt+" carry operations.");
+			
 		}
 	}
 }
