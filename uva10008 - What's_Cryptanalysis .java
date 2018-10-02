@@ -34,8 +34,8 @@ class main{
 				for(int k=0;k<26;k++){
 					if(array[k]==j)
 						System.out.println((char)(k+'A')+" "+j);
+					}
 				}
-			}
 			}
 			
 		
