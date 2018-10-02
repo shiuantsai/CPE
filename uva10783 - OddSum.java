@@ -1,6 +1,6 @@
 /*
 題目:
-https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1119
+https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1724
 */
 import java.util.*;
 class main{
