@@ -1,4 +1,6 @@
 /*
+題目:
+https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1753
 題意:
 s代表相加，d代表相減
 解法:
