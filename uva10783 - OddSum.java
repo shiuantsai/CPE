@@ -1,3 +1,7 @@
+/*
+題目:
+https://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=1119
+*/
 import java.util.*;
 class main{
 	public static void main(String args[]){
