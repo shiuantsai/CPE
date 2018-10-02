@@ -38,6 +38,7 @@ class main{
 			for(int i=0;i<26;i++){
 				int min = Math.min(table1[i],table2[i]);
 				
+				//這裡控制不會印出A 0 這種情況
 				for(int j=0;j<min;j++)
 					System.out.print((char)(i+97));
 			}
