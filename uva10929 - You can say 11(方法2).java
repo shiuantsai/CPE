@@ -10,7 +10,7 @@ class main{
 		if(str.equals("0")) 
 			break;
 		int array[] ={0,0};
-		
+		//字元轉字串-'0'
 		for(int i=0;i<str.length();i++){
 			array[i%2] += (str.charAt(i)-'0');
 		}
