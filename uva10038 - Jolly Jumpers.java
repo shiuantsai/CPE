@@ -8,7 +8,8 @@
 將array2做排序，再用迴圈1~n-1判斷，
 利用因為4個數相減完恰巧是3個數
 所以陣列必定剛好是1~3 若條件不成立即not jolly
-
+ex:
+1 4 2 3 相減過後 3 2 1 所以出現了1~3 : jolly
 */
 import java.util.*;
 class main{
